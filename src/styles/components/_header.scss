@@ -1,0 +1,46 @@
+.nav-bar {
+    margin: 5px 0px 0px 5px;
+    display: flex;
+    background-color: $white;
+    // border: solid black 2px;
+    border-radius: 20px;
+    width: 25%;
+    padding: 5px 0px;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+
+    a {
+        padding: 4px;
+        transition: 0.3s ease-in-out;
+        text-decoration: none;
+    }
+    .nav-not-active:hover {
+        border-radius: 15px;
+        background-color: $color-3;
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+}
+h1 {
+    @include verticalCenter();
+    font-size: 4rem;
+    color: black;
+}
+.nav-active {
+    border-radius: 15px;
+    background-color: rgba($color-3, 0.8);
+
+    transform: scale(1.2);
+    cursor: default;
+}
+
+@media screen and (max-width: 715px) {
+    .nav-bar {
+        width: 80%;
+        margin: 7px auto 0px auto;
+    }
+    h1 {
+        font-size: 3rem;
+        margin-top: 5px;
+    }
+}

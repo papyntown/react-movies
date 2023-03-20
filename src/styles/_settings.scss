@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap");
+
+$font-1: "Rubik Gemstones", cursive;
+$color-1: yellow;
+$color-2: #ed2626;
+$color-3: #095228;
+$white: rgb(243 243 243 / 88%);
+* {
+    list-style: none;
+    box-sizing: border-box;
+    font-family: $font-1;
+    color: $color-2;
+    margin: 0px;
+    padding: 0px;
+}
+html {
+    scroll-behavior: smooth;
+}
+@mixin verticalCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*
+h1 {
+    @include verticalCenter();
+    color: $color-2;
+}
+*/
