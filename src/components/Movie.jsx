@@ -1,10 +1,12 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import { FaCopy, FaFilm } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import { FaFilm, FaCopy } from "react-icons/fa";
 
 import "react-toastify/dist/ReactToastify.css";
 const Card = ({ movie }) => {
+    const navigate = useNavigate();
     const dateFormater = (date) => {
         let [yy, mm, dd] = date.split("-");
         return [dd, mm, yy].join("/");
@@ -96,6 +98,8 @@ const Card = ({ movie }) => {
         let newData = storedData.filter((id) => id != movie.id);
 
         window.localStorage.movies = newData;
+
+        navigate(0);
     };
     const notify = () => {
         toast.info(
@@ -198,7 +202,8 @@ const Card = ({ movie }) => {
                     onClick={() => {
                         addStorage();
                         notifyAdd();
-                    }}>
+                    }}
+                >
                     Ajouter aux coups de noël
                 </div>
             ) : (
@@ -206,8 +211,8 @@ const Card = ({ movie }) => {
                     className="btn"
                     onClick={() => {
                         deleteStorage();
-                        window.location.reload();
-                    }}>
+                    }}
+                >
                     Supprimer de la liste
                 </div>
             )}
