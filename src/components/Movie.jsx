@@ -1,12 +1,11 @@
 import React from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import { FaCopy, FaFilm } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 const Card = ({ movie }) => {
-    const navigate = useNavigate();
+    const [key, setKey] = React.useState(0);
     const dateFormater = (date) => {
         let [yy, mm, dd] = date.split("-");
         return [dd, mm, yy].join("/");
@@ -99,7 +98,7 @@ const Card = ({ movie }) => {
 
         window.localStorage.movies = newData;
 
-        navigate(0);
+        setKey(key + 1); // This will force the component to re-render
     };
     const notify = () => {
         toast.info(
@@ -211,6 +210,7 @@ const Card = ({ movie }) => {
                     className="btn"
                     onClick={() => {
                         deleteStorage();
+                        window.location.reload();
                     }}
                 >
                     Supprimer de la liste
