@@ -6,7 +6,7 @@ const Video = () => {
             <div className="video-container">
                 <img
                     id="myVideo"
-                    src="/src/assets/img/backgroundNoel.png"
+                    src="./src/assets/img/backgroundNoel.png"
                     alt="bg-noel"
                 />
                 {/* <video
